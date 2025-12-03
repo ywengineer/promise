@@ -13,6 +13,10 @@ type Pool interface {
 	Go(f func())
 }
 
+func SetDefaultPool(p Pool) {
+	defaultPool = p
+}
+
 type wrapFunc func(f func())
 
 func (wf wrapFunc) Go(f func()) {
